@@ -153,8 +153,4 @@ This project is for academic and research purposes.
 
 ---
 
-## 📬 Contact
 
-For queries or collaboration, feel free to reach out.
-
----
