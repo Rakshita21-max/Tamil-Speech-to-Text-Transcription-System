@@ -6,8 +6,8 @@ import urllib.error
 import time
 import gradio as gr
 
-# Setup API Key securely from environment variable or keep empty, but do NOT hardcode it
-DEFAULT_API_KEY = os.environ.get("GEMINI_API_KEY", "")
+# Setup API Key from user provided curl
+DEFAULT_API_KEY = "AIzaSyB7pEluRhpKZLxf6TxZd7VSOfljKrYsA-s"
 
 def transcribe(audio_path, api_key, model_name):
     if not audio_path:
