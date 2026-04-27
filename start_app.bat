@@ -19,7 +19,7 @@ venv\Scripts\python.exe -m pip install -r requirements.txt
 
 echo.
 echo ========================================================
-echo [INFO] Launching the Gradio Web UI...
+echo [INFO] Launching the Gradio Web UI....
 echo ========================================================
 venv\Scripts\python.exe app.py
 
