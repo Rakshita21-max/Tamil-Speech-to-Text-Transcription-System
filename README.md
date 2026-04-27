@@ -152,5 +152,9 @@ This project is for academic and research purposes.
 * Gradio
 
 ---
+---
+Dark & Light Mode Theme Toggle
 
+This project demonstrates how to implement a Dark Mode and Light Mode toggle using HTML, CSS. It allows users to switch between themes and saves their preference for future visits.
 
+---
