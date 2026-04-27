@@ -7,7 +7,7 @@ import time
 import gradio as gr
 
 # Setup API Key from user provided curl
-DEFAULT_API_KEY = "AIzaSyDlAPB4MaHBdnqdK1NKxhrs1ojz_eZgVms"
+DEFAULT_API_KEY = "*****************************************"
 
 def transcribe(audio_path, api_key, model_name):
     with open("debug_entry.txt", "w", encoding="utf-8") as f:
