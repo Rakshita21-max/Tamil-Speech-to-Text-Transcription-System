@@ -211,7 +211,7 @@ input:checked + .slider .moon-icon {
 }
 """
 
-html_switch = """
+html_switch = """    #theme of dark and light switch method of web page
 <div class="theme-switch-wrapper">
   <label class="theme-switch" for="theme-checkbox">
     <input type="checkbox" id="theme-checkbox" onchange="
