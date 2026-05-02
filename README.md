@@ -160,3 +160,6 @@ This project demonstrates how to implement a Dark Mode and Light Mode toggle usi
 ---
 Then Based on Error Reduse For Overfitting 
 * because Training data is accacuy good but testing low fit
+
+* <img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/79f3aead-64b4-46a9-9075-fb8659994b62" />
+
