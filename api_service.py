@@ -7,7 +7,7 @@ import time
 import gradio as gr
 
 # Setup HuggingFace TTS API Key from user provided curl
-DEFAULT_API_KEY = "AIzaSyBXw9v6UjTEc_PYhZjZcPya_fd3P4HFCl0"
+DEFAULT_API_KEY = ""
 
 def transcribe(audio_path, api_key, model_name):
     with open("debug_entry.txt", "w", encoding="utf-8") as f:
