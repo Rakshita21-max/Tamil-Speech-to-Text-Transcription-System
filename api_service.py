@@ -41,7 +41,7 @@ def transcribe(audio_path, api_key, model_name):
         elif lower_path.endswith(".mp4"):
             mime_type = "audio/mp4"
 
-        # Prepare the  API request
+        # Prepare the API request
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent"
         
         headers = {
@@ -82,7 +82,7 @@ def transcribe(audio_path, api_key, model_name):
                     if "candidates" in result and len(result["candidates"]) > 0:
                         text = result["candidates"][0]["content"]["parts"][0]["text"].strip()
                         
-                        # Save to text file for download
+                        # Save to text file for download Add new feature
                         file_path = "transcription_result.txt"
                         try:
                             with open(file_path, "w", encoding="utf-8") as text_file:
@@ -115,5 +115,5 @@ def transcribe(audio_path, api_key, model_name):
         except Exception as write_err:
             print(f"Failed to write error log: {write_err}")
         
-        # Also return Gradio Error so it raises cleanly in the UI
+        # Also return Gradio Error so it raises cleanly in the UI Error based Massege
         raise gr.Error(f"Backend Error: {str(e)}")
