@@ -1,3 +1,68 @@
+import gradio as gr
+from api_service import transcribe, DEFAULT_API_KEY
+from theme_config import custom_css, html_switch
+
+# Define the Gradio interface
+with gr.Blocks(title="Tamil Speech-to-Text", theme=gr.themes.Soft(), css=custom_css) as demo:
+    with gr.Row():
+        with gr.Column(scale=4):
+            gr.Markdown("# 🎙️ Tamil Speech-to-Text Transcription System")
+            gr.Markdown("Record your voice or upload an audio file to convert Tamil speech into text quickly and accurately.")
+        with gr.Column(scale=1, min_width=150):
+            theme_btn = gr.HTML(html_switch)
+            
+    with gr.Row():
+        with gr.Column(scale=1):
+            api_key_input = gr.Textbox(
+                label="API Key", 
+                type="password", 
+                value=DEFAULT_API_KEY,
+                visible=False
+            )
+            model_input = gr.Textbox(
+                label="Model Name", 
+                value="gemini-flash-latest",
+                visible=False
+            )
+            
+            with gr.Tabs():
+                with gr.Tab("🎤 Record"):
+                    audio_mic = gr.Audio(sources=["microphone"], type="filepath", label="Mic Input", format="wav")
+                    btn_mic = gr.Button("Transcribe Recording", variant="primary")
+                with gr.Tab("📁 Upload"):
+                    audio_upload = gr.Audio(sources=["upload"], type="filepath", label="File Input", format="wav")
+                    btn_upload = gr.Button("Transcribe File", variant="primary")
+                    
+        with gr.Column(scale=1):
+            text_output = gr.Textbox(label="Transcription Result", lines=12, placeholder="Transcription will appear here...")
+            file_output = gr.File(label="Download Transcription as TXT")
+            
+    # Map both buttons to the same transcribe function and output
+    btn_mic.click(fn=transcribe, inputs=[audio_mic, api_key_input, model_input], outputs=[text_output, file_output])
+    btn_upload.click(fn=transcribe, inputs=[audio_upload, api_key_input, model_input], outputs=[text_output, file_output])
+
+def get_free_port():
+    import socket
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.bind(('', 0))
+    port = s.getsockname()[1]
+    s.close()
+    return port
+
+if __name__ == "__main__":
+    free_port = get_free_port()
+    print(f"--- DEBUG: Starting Gradio on port {free_port} ---")
+    demo.launch(
+        server_name="127.0.0.1", 
+        server_port=free_port,
+        share=False,
+        inbrowser=True,
+        show_api=False
+    )
+
+
+
+
 # import os
 # import base64
 # import json
