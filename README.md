@@ -110,10 +110,10 @@ start_app.bat
 
 ## 🔧 Technologies Used
 
-* Python
-* OpenAI Whisper
-* PyTorch
-* Gradio
+* Python -3.9.5 version 
+* OpenAI Whisper -Hugging Face Model (pre-training model)
+* PyTorch - Framework
+* Gradio - Using to frondend libires of import  
 * Hugging Face (optional for fine-tuning)
 
 ---
@@ -147,9 +147,9 @@ This project is for academic and research purposes.
 
 ## 🙌 Acknowledgements
 
-* OpenAI Whisper
-* Hugging Face
-* Gradio
+* OpenAI Whisper - small 
+* Hugging Face - model using of pre training 
+* Gradio - ui based
 
 ---
 ---
