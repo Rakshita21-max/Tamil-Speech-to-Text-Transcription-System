@@ -13,7 +13,7 @@ echo [INFO] Activating virtual environment...
 call venv\Scripts\activate
 
 echo.
-echo [INFO] Checking and updating environment dependencies...
+echo [INFO] Checking and updating environment dependencies...>
 venv\Scripts\python.exe -m pip install --upgrade pip
 venv\Scripts\python.exe -m pip install -r requirements.txt
 
